@@ -1,7 +1,7 @@
   <div align="center">
  <p align="center">
- <img title="MSSRF" src='https://img.shields.io/badge/MSSRF-1.0.0-brightgreen.svg' />
- <img title="MSSRF" src='https://img.shields.io/badge/ThinkPHPV5.0.23-Tool'/>
+ <img title="MSSRF" src='https://img.shields.io/badge/MSSRF-1.1.0-brightgreen.svg' />
+ <img title="MSSRF" src='https://img.shields.io/badge/SSRF-Tool'/>
  <img title="MSSRF" src='https://img.shields.io/badge/Python-3.9-yellow.svg' />
   <img title="MSSRF" src='https://img.shields.io/badge/HackerTool-x' />
  <img title="MSSRF" src='https://img.shields.io/static/v1?label=Author&message=@Martin&color=red'/>
@@ -16,9 +16,15 @@
   </tr>
   <tr>
     <th>
+        Server sensitive file collection
+    </th>
+    
+  </tr>
+ <tr>
+    <th>
         SSRF attack
     </th>
-  </tr>
+ </tr>
  </table>
 </div>
 
@@ -27,23 +33,20 @@
 
       ```#python3 MSSRF.py -h```
 
-  ![图片名称](./PT/help0.png)  
+  ![图片名称](./PT/help.png)  
 
-# Send request
+# Sensitive information collection
+
+```#python3 MSSRF.py -url http://Martin.com?url=* -info```
+
+  ![图片名称](./PT/INFO.png)  
 
 
+# SSRF Springboard attack
 
-Find injection point
+```#python3 MSSRF.py -url http://Martin.com?url=* -info -exp```
 
-  ![图片名称](./PT/use1.png)  
 
-__PS:You must mark the injection point with * and write the request message required to access other websites into the Request.conf file__
+![图片名称](./PT/SSRF.png)  
 
- ```#python3 MSSRF.py -url http://61.147.171.105:50765/use.php?url=*```
 
-  ![图片名称](./PT/SSRF.png)  
-  
-_The server successfully requested another page_
- 
-  ![图片名称](./PT/SSRF2.png)  
-  
