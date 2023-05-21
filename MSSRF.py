@@ -105,8 +105,10 @@ Host: 127.0.0.1:80
             return False
         else:
             if response.status_code == 200:
-                server = response.headers['Server']
+                server = response.headers.get('Server', 'linux')
+                # (response.headers['Server'] if response.headers['Server'] else 'linux')
                 logger.info("[Middleware] " + server)
+
                 if 'Windows' in server:
                     logger.info("Maybe it's a [Windows] operating system")
                     return 0
